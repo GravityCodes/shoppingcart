@@ -1,3 +1,59 @@
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.header {
+  position: relative;
+  height: 100%;
+}
+
+.header-children {
+  position: absolute;
+  top: 50px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: .9rem;
+}
+
+.header-children-link-wrapper {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  text-align: center;
+}
+
+.box {
+  width: 100%;
+  backdrop-filter: blur(3px);
+}
+
+.link-btn {
+  border: 2px solid white;
+  padding: 6px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  perspective: 400px;
+  transform: translateZ(2px);
+}
+
+.link-btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  transform: translate(-5px, -3px) translateZ(1px);
+}
+
+.categories-button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  white-space: nowrap ;
+  justify-content: center;
+  padding: 20px;
 }

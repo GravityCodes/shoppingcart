@@ -1,17 +1,34 @@
 import styles from "./HomePage.module.css"
-import heroImg from "../../assets/hero-background.jpg"
+import heroImg from "../../assets/imgs/hero-background.jpg"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { useCategories } from "./useCategories"
+import { CategoryButton } from "../categories/CategoryButton"
 
 export const HomePage = () => {
+
+  const {categories, error, loading} = useCategories();
+
+
   return (
     <>
-      <h1>Fordly</h1>
+      <h1 role="heading">Fordly</h1>
 
-      <div>
+      <div className={styles.header}>
         <img src={heroImg} alt="" />
-        <p>Reasonable products for Reasonable prices</p>
-        <Link to={"/shop"}> Start Shopping</Link>
+        <p className={styles["header-children"]}>Reasonable products for Reasonable prices</p>
+        <div className={styles["header-children-link-wrapper"]}>
+        <Link className={styles["link-btn"]} to={"/shop"}> Start Shopping</Link>
+        </div>
+      </div>
+
+      <div className={styles["categories-button-grid"]}>
+        {
+          loading ? <p>Loading...</p> 
+          : error ? <p> A network Error has been encountered</p>
+          : categories.map(category => <CategoryButton key={category} name={category} />)
+          
+        }
       </div>
     </>
   )

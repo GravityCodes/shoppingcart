@@ -1,0 +1,19 @@
+
+.category-button {
+
+}
+
+.img-wrapper {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.img-wrapper img {
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+}
