@@ -1,0 +1,3 @@
+.product-container {
+  composes: product-container from "../store/Shop.module.css"
+}

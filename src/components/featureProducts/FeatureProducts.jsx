@@ -1,4 +1,6 @@
 import { useShopProducts } from "../store/useShopProducts"
+import { Product } from "../product/Product"
+import styles from "./FeatureProducts.module.css"
 
 export const FeatureProducts = () => {
   const {products, error, loading} = useShopProducts({limit:10});
@@ -10,13 +12,9 @@ export const FeatureProducts = () => {
   return (
     <>
     <h2>Featured Products</h2>
-    {products.map(product => {
-      return (
-        <div key={product.id}>
-          <img src={product.image} alt="" />
-        </div>
-      )
-    })}
+    <div className={styles["product-container"]}>
+      {products.map(product => <Product key={product.id} {...product}/>)}
+    </div>
     </>
-  )
+  )                                    
 }

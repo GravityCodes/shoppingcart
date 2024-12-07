@@ -1,0 +1,27 @@
+.product-wrapper {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.img {
+  padding: 20px;
+}
+
+.img img {
+  height: 100%;
+  margin: 0 auto;
+}
+
+.info {
+  padding: 10px;
+}
+
+.title {
+  font-size: .7rem;
+}
+
+.category {
+  font-size: .6rem;
+}
