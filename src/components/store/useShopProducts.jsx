@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react"
+import PropTypes from "prop-types";
 
-export const useShopProducts = () => {
+export const useShopProducts = (props) => {
   const [products, setProducts] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -9,7 +10,7 @@ export const useShopProducts = () => {
 
     //const abortController = new AbortController();
 
-    fetch('https://fakestoreapi.com/products?limit=5', {
+    fetch(`https://fakestoreapi.com/products?limit=${props.limit}`, {
       mode: "cors",
       //signal: abortController.signal,
     })
@@ -31,3 +32,7 @@ export const useShopProducts = () => {
   return {products, error, loading};
 
 };
+
+useShopProducts.propType = {
+    limit: PropTypes.number.isRequired,
+}

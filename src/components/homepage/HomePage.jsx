@@ -2,8 +2,10 @@ import styles from "./HomePage.module.css"
 import heroImg from "../../assets/imgs/hero-background.jpg"
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { useCategories } from "./useCategories"
+import { useCategories } from "../categories/useCategories"
 import { CategoryButton } from "../categories/CategoryButton"
+import { Outlet } from "react-router-dom"
+import { FeatureProducts } from "../featureProducts/FeatureProducts"
 
 export const HomePage = () => {
 
@@ -27,9 +29,11 @@ export const HomePage = () => {
           loading ? <p>Loading...</p> 
           : error ? <p> A network Error has been encountered</p>
           : categories.map(category => <CategoryButton key={category} name={category} />)
-          
         }
       </div>
+      
+      <FeatureProducts />
+    
     </>
   )
 }
