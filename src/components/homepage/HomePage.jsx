@@ -4,8 +4,8 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useCategories } from "../categories/useCategories"
 import { CategoryButton } from "../categories/CategoryButton"
-import { Outlet } from "react-router-dom"
 import { FeatureProducts } from "../featureProducts/FeatureProducts"
+import {Header} from "../header/Header"
 
 export const HomePage = () => {
 
@@ -14,12 +14,12 @@ export const HomePage = () => {
 
   return (
     <>
-      <h1 role="heading">Fordly</h1>
-
-      <div className={styles.header}>
+      <Header />
+    
+      <div className={styles.hero}>
         <img src={heroImg} alt="" />
-        <p className={styles["header-children"]}>Reasonable products for Reasonable prices</p>
-        <div className={styles["header-children-link-wrapper"]}>
+        <p className={styles["hero-children"]}>Reasonable products for Reasonable prices</p>
+        <div className={styles["hero-children-link-wrapper"]}>
         <Link className={styles["link-btn"]} to={"/shop"}> Start Shopping</Link>
         </div>
       </div>

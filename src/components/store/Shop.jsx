@@ -1,6 +1,7 @@
 import { useShopProducts } from "./useShopProducts"
 import { Product } from "../product/Product";
 import styles from "./Shop.module.css"
+import {Header} from "../header/Header"
 
 export const Shop = () => {
   const {products, loading, error} = useShopProducts({limit:5})
@@ -12,7 +13,8 @@ export const Shop = () => {
 
   return (
     <>
-    <h1>This is the shop</h1>
+    <Header />
+    
     
     <div className={styles["product-container"]}>
       {products.map(product => <Product key={product.id} {...product} /> )}

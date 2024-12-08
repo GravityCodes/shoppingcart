@@ -3,12 +3,12 @@ h1 {
   text-align: center;
 }
 
-.header {
+.hero {
   position: relative;
   height: 100%;
 }
 
-.header-children {
+.hero-children {
   position: absolute;
   top: 50px;
   color: white;
@@ -17,7 +17,7 @@ h1 {
   font-size: .9rem;
 }
 
-.header-children-link-wrapper {
+.hero-children-link-wrapper {
   position: absolute;
   top: 80px;
   width: 100%;
