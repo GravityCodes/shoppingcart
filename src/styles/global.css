@@ -121,6 +121,9 @@ hyphens: auto;
   font-display: swap;
 }
 
+:root:has(.overflow-y-hidden) {
+  overflow: hidden;
+}
 
 body {
   font-family: Arimo;

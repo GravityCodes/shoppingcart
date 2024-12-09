@@ -1,0 +1,21 @@
+.sidebar-wrapper {
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  height: 100vh;
+
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+

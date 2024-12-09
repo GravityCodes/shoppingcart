@@ -6,6 +6,7 @@ import {Header} from "../header/Header"
 export const Shop = () => {
   const {products, loading, error} = useShopProducts({limit:5})
 
+
   if (loading) return <p>Loading....</p>;
 
   if (error) return  <p>A network error was encountered</p>;
