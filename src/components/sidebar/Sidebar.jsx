@@ -37,6 +37,3 @@ export const Sidebar = () => {
   )
 }
 
-Sidebar.propTypes = {
-  categories : PropTypes.array.isRequired,
-}

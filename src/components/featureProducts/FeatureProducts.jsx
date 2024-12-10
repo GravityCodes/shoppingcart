@@ -2,6 +2,8 @@ import { useShopProducts } from "../store/useShopProducts"
 import { Product } from "../product/Product"
 import styles from "./FeatureProducts.module.css"
 
+
+
 export const FeatureProducts = () => {
   const {products, error, loading} = useShopProducts({limit:10});
 

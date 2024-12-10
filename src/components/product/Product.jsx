@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./Product.module.css"
+import { placeItemInCart } from "../cart/productsInCart"
 
 export const Product = (props) => {
   return (
@@ -11,7 +12,7 @@ export const Product = (props) => {
           <p className={styles.price}>${props.price}</p>
           <p className={styles.title}>{props.title}</p>
           <p className={styles.category}>{props.category}</p>
-          <button>Add to Cart</button>
+          <button onClick={() => placeItemInCart(props.title,{quantity: 2})}>Add to Cart</button>
         </div>
     </div>
   )

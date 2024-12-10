@@ -2,7 +2,7 @@ import { Sidebar } from "../sidebar/Sidebar"
 import { Cart } from "../cart/Cart"
 import styles from "./Header.module.css"
 import { Link } from "react-router-dom"
-import PropTypes from "prop-types"
+
 
 export const Header = () => {
   
@@ -16,6 +16,3 @@ export const Header = () => {
   )
 }
 
-Header.propTypes ={ 
-  categories: PropTypes.array.isRequired,
-}
