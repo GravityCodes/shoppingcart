@@ -1,20 +1,20 @@
 import styles from "./HomePage.module.css"
 import heroImg from "../../assets/imgs/hero-background.jpg"
-import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useCategories } from "../categories/useCategories"
 import { CategoryButton } from "../categories/CategoryButton"
 import { FeatureProducts } from "../featureProducts/FeatureProducts"
 import {Header} from "../header/Header"
+import { useCartProducts } from "../../hooks/useCartProducts"
 
 export const HomePage = () => {
 
   const {categories, error, loading} = useCategories();
-
+  const { updateCartProducts, amountOfProducts} = useCartProducts();
 
   return (
     <>
-      <Header />
+      <Header numOfProducts={amountOfProducts} />
     
       <div className={styles.hero}>
         <img src={heroImg} alt="" />
@@ -32,7 +32,7 @@ export const HomePage = () => {
         }
       </div>
       
-      <FeatureProducts />
+      <FeatureProducts updateCartProducts={updateCartProducts} />
     
     </>
   )
