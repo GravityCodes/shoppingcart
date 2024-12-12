@@ -1,10 +1,30 @@
 .product-container {
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(130px,1fr));
+  grid-template-rows: repeat(auto-fill, 350px);
   gap: 20px;
+  min-height: 90vh;
 }
 
 .breadcrum {
   font-size: 0.7rem;
+}
+
+.loading-cards {
+  background-color: rgb(247, 247, 247);
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  animation: pulse 1s  infinite ease-in-out alternate;
+  box-shadow: 0px 2px 5px rgb(138, 138, 138);
+}
+
+@keyframes pulse {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0.2;
+  }
 }

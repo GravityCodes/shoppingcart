@@ -43,9 +43,6 @@ export const Shop = () => {
 
   }, [category]);
 
-  if (loading) return <p>Loading....</p>;
-
-  if (error) return  <p>A network error was encountered</p>;
 
   return (
     <>
@@ -54,8 +51,30 @@ export const Shop = () => {
     <p style={{padding: "10px"}} className={styles.breadcrum}>Shop &gt; Category &gt; {category == undefined ? "All" : category.toString().charAt(0).toUpperCase() + category.toString().slice(1)}</p>
     
     <main>
+      
       <div className={styles["product-container"]}>
-        {products.map(product => <Product key={product.id} {...product} addToCart={updateCartProducts}/> )}
+        
+        {loading ? 
+          <>
+            <div className={styles["loading-cards"]}>
+            </div>
+            <div className={styles["loading-cards"]}>
+            </div>
+            <div className={styles["loading-cards"]}>
+            </div>
+            <div className={styles["loading-cards"]}>
+            </div>
+            <div className={styles["loading-cards"]}>
+            </div>
+            <div className={styles["loading-cards"]}>
+            </div>
+            <div className={styles["loading-cards"]}>
+            </div>
+            <div className={styles["loading-cards"]}>
+            </div>
+          </> 
+        : error ? "bar" 
+        : products.map(product => <Product key={product.id} {...product} addToCart={updateCartProducts}/> )}
       </div>
     </main>
     

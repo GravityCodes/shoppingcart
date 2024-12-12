@@ -27,12 +27,14 @@ export const Sidebar = () => {
     <>
     <Menu />
     <div className={styles["sidebar-wrapper"]}>
-      <button onClick={() => setIsOpen(false)}>
-        <X />
+      <button className={styles["close-button"]} onClick={() => setIsOpen(false)}>
+        <X size={20}/>
       </button>
       <ul>
-        {categories.map((category,index) => <NavLink key={index} to={`/shop/${category}`} onClick={() => setIsOpen(false)} >{category}</NavLink>)}
-        <NavLink to={"/shop"} onClick={() => setIsOpen(false)}>All</NavLink>
+        {categories.map((category,index) => <li key={index}><NavLink  to={`/shop/${category}`} onClick={() => setIsOpen(false)} >{category.toString().charAt(0).toUpperCase() + category.toString().slice(1)}</NavLink></li>)}
+        <li>
+          <NavLink to={"/shop"} onClick={() => setIsOpen(false)}>All</NavLink>
+        </li>
       </ul>
     </div>
     </>

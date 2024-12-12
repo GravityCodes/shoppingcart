@@ -4,7 +4,7 @@ import electronicsImg from "../../assets/imgs/electronics.jpeg"
 import jewerelyImg from "../../assets/imgs/jewelery.jpeg"
 import menClothingImg from "../../assets/imgs/men-clothing.jpeg"
 import womenClothingImg from "../../assets/imgs/women-clothing.jpeg"
-
+import { Link } from 'react-router-dom'
 
 export const CategoryButton = (props) => {
 
@@ -27,12 +27,15 @@ export const CategoryButton = (props) => {
 
   return(
     <div className={styles["category-button"]}>
+      <Link to={`/shop/${props.name}`}>
       <div className={styles["img-wrapper"]}>
         <img src={useImage(props.name)} alt="" />
       </div>
 
       <p>{props.name}</p>
+      </Link>
     </div>
+    
   )
 }
 
