@@ -4,7 +4,7 @@ import styles from "./FeatureProducts.module.css"
 import PropTypes from "prop-types"
 
 export const FeatureProducts = (props) => {
-  const {products, error, loading} = useShopProducts({limit:10});
+  const {products, error, loading} = useShopProducts({category:"",limit:10});
 
   if(error) return <p>A network error has occured.</p>
   if (loading) return <p>Loading..</p>

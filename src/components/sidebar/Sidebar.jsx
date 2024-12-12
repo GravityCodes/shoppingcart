@@ -3,6 +3,7 @@ import styles from "./Sidebar.module.css"
 import { Library, Menu, X } from "lucide-react";
 import PropTypes from "prop-types";
 import { useCategories } from "../categories/useCategories";
+import { NavLink } from "react-router-dom";
 
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,8 @@ export const Sidebar = () => {
         <X />
       </button>
       <ul>
-        {categories.map((category,index) => <li key={index}>{category}</li>)}
+        {categories.map((category,index) => <NavLink key={index} to={`/shop/${category}`} onClick={() => setIsOpen(false)} >{category}</NavLink>)}
+        <NavLink to={"/shop"} onClick={() => setIsOpen(false)}>All</NavLink>
       </ul>
     </div>
     </>

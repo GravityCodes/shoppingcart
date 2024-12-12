@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react"
 import PropTypes from "prop-types";
+import fetchProducts from "../modules/fetchProducts";
 
 export const useShopProducts = (props) => {
   const [products, setProducts] = useState(null);
@@ -9,24 +10,14 @@ export const useShopProducts = (props) => {
   useEffect( () => {
 
     //const abortController = new AbortController();
+    console.log(props.category)
 
-    fetch(`https://fakestoreapi.com/products?limit=${props.limit}`, {
-      mode: "cors",
-      //signal: abortController.signal,
-    })
-      .then((response) => {
-        if(response.status >= 400) {
-          throw new Error("server error");
-        }
-        return response.json();
-      })
-      .then((response) => setProducts(response))
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
-
+    fetchProducts(props.category,props.limit)
+        .then((response) => setProducts(response))
+        .catch((error) => setError(error))
+        .finally(() => setLoading(false));
      // return () => { abortController.abort();};
-  }, []);
-
+  }, [props.category,props.limit]);
 
 
   return {products, error, loading};
@@ -35,4 +26,5 @@ export const useShopProducts = (props) => {
 
 useShopProducts.propType = {
     limit: PropTypes.number.isRequired,
+    category: PropTypes.string.isRequired,
 }
