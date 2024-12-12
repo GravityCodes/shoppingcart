@@ -13,7 +13,7 @@ export const Product = (props) => {
           <p className={styles.price}>${props.price}</p>
           <p className={styles.title}>{props.title}</p>
           <p className={styles.category}>{props.category}</p>
-          <button onClick={() => props.addToCart(props.title, 1)}>Add to Cart</button>
+          <button onClick={() => props.addToCart(props.title, 1, props.image, props.price, props.id)}>Add to Cart</button>
         </div>
     </div>
   )
@@ -26,4 +26,5 @@ Product.propTypes = {
   category: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   addToCart: PropTypes.func.isRequired,
+  id: PropTypes.number,
 }

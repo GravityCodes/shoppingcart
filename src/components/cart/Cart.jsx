@@ -1,23 +1,20 @@
 import { ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import styles from "./Cart.module.css";
+import { Link } from "react-router-dom";
 
 export const Cart = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  if(isOpen == false) {
     
     return (
-            <> 
-            <p>{props.numOfProducts}</p>      
-            <ShoppingCart />
-            </>
+            <Link to={"/Checkout"}>
+              <div className={styles.cart} > 
+                {props.numOfProducts > 0 && <p className={styles["product-amount-display"]}>{props.numOfProducts}</p>}     
+                <ShoppingCart />
+              </div>
+            </Link>
     ) 
-  }
-
-  return (
-    <p>This is the cart</p>
-  )
 }
 
 Cart.propTypes = {

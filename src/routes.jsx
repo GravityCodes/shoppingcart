@@ -1,5 +1,6 @@
 import { HomePage } from "./components/homepage/HomePage"
 import { Shop } from "./components/store/Shop"
+import { Checkout } from "./components/cart/Checkout"
 
 
 export const routes = [
@@ -10,5 +11,9 @@ export const routes = [
   {
     path: "/shop",
     element: <Shop />,
+  },
+  {
+    path: "/checkout",
+    element: <Checkout />
   }
 ]
