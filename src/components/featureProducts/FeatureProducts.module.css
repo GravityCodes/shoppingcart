@@ -1,3 +1,11 @@
 .product-container {
   composes: product-container from "../store/Shop.module.css"
 }
+
+h2 {
+  padding: 10px;
+}
+
+.loading-cards {
+  composes: loading-cards from "../store/Shop.module.css"
+}

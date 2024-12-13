@@ -44,7 +44,7 @@ export const Checkout = () => {
 
                   <button className={styles["checkout-btn"]}>Checkout</button>
                   <div className={styles["final-price"]}>
-                    Total <span className={styles["final-price-num"]}>${finalPrice}</span>
+                    Total <span className={styles["final-price-num"]}>${finalPrice.toFixed(2)}</span>
                   </div>
                   
                 </div>

@@ -7,7 +7,26 @@ export const FeatureProducts = (props) => {
   const {products, error, loading} = useShopProducts({category:"",limit:10});
 
   if(error) return <p>A network error has occured.</p>
-  if (loading) return <p>Loading..</p>
+  if (loading) return <>
+    <div className={styles["product-container"]}>
+        <div className={styles["loading-cards"]}>
+        </div>
+        <div className={styles["loading-cards"]}>
+        </div>
+        <div className={styles["loading-cards"]}>
+        </div>
+        <div className={styles["loading-cards"]}>
+        </div>
+        <div className={styles["loading-cards"]}>
+        </div>
+        <div className={styles["loading-cards"]}>
+        </div>
+        <div className={styles["loading-cards"]}>
+        </div>
+        <div className={styles["loading-cards"]}>
+        </div>
+    </div>
+  </>
 
 
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import styles from "./Sidebar.module.css"
-import { Library, Menu, X } from "lucide-react";
+import { ChevronRightIcon, Library, Menu, X } from "lucide-react";
 import PropTypes from "prop-types";
 import { useCategories } from "../categories/useCategories";
 import { NavLink } from "react-router-dom";
@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {categories, error, loading} = useCategories();
+  const [exit, setExit] = useState(false);
 
   useEffect(() => {
     if(isOpen){
@@ -18,23 +19,35 @@ export const Sidebar = () => {
   }, [isOpen]);
 
 
-  if(isOpen == false ) return <button onClick={() => setIsOpen(true)}> <Menu /> </button>
+  if(isOpen == false ) return <button onClick={() => setIsOpen(true)}> <Menu size={22}/> </button>
 
   if(error) return <p>A network error has occured</p>
 
   if(loading) return <p>Loading..</p>
+
+  function handleSidebarExit(){
+    setExit(true);
+    setTimeout(() => {
+      setIsOpen(false);
+      setExit(false);
+    }, 200);
+  }
   return (
     <>
-    <Menu />
-    <div className={styles["sidebar-wrapper"]}>
-      <button className={styles["close-button"]} onClick={() => setIsOpen(false)}>
-        <X size={20}/>
+    <button style={{padding:"1px  6px"}}>
+      <Menu  size={22}/>
+    </button>
+    <div className={`${styles.background} ${exit && styles.exit}`} onClick={handleSidebarExit} ></div>
+    <div className={`${styles["sidebar-wrapper"]} ${exit ? styles.exit : ""}`}>  
+      <button className={styles["close-button"]} onClick={handleSidebarExit}>
+        <X size={20} color="white"/>
       </button>
       <ul>
-        {categories.map((category,index) => <li key={index}><NavLink  to={`/shop/${category}`} onClick={() => setIsOpen(false)} >{category.toString().charAt(0).toUpperCase() + category.toString().slice(1)}</NavLink></li>)}
-        <li>
-          <NavLink to={"/shop"} onClick={() => setIsOpen(false)}>All</NavLink>
-        </li>
+        {categories.map((category,index) => <NavLink  key={index} to={`/shop/${category}`} onClick={() => setIsOpen(false)} > <li >{category.toString().charAt(0).toUpperCase() + category.toString().slice(1)} <ChevronRightIcon className={styles["right-icon"]} size={15}/></li></NavLink>)}
+        
+        <NavLink to={"/shop"} onClick={() => setIsOpen(false)}><li>All <ChevronRightIcon className={styles["right-icon"]} size={15} /></li></NavLink>
+        <NavLink to={"/"} onClick={() => setIsOpen(false)}><li>Home <ChevronRightIcon className={styles["right-icon"]} size={15} /></li></NavLink>
+        
       </ul>
     </div>
     </>

@@ -26,7 +26,12 @@ export const HomePage = () => {
 
       <div className={styles["categories-button-grid"]}>
         {
-          loading ? <p>Loading...</p> 
+          loading ? <>
+          <div className={styles["category-loading"]}></div>
+          <div className={styles["category-loading"]}></div>
+          <div className={styles["category-loading"]}></div>
+          <div className={styles["category-loading"]}></div>
+          </> 
           : error ? <p> A network Error has been encountered</p>
           : categories.map(category => <CategoryButton key={category} name={category} />)
         }

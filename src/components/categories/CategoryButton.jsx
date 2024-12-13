@@ -32,7 +32,7 @@ export const CategoryButton = (props) => {
         <img src={useImage(props.name)} alt="" />
       </div>
 
-      <p>{props.name}</p>
+      <p>{props.name.toString().charAt(0).toUpperCase() + props.name.toString().slice(1)}</p>
       </Link>
     </div>
     
