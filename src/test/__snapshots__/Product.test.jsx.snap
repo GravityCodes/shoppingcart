@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`product component > matches snapshot 1`] = `
+<div>
+  <div
+    class="_product-wrapper_229001 "
+  >
+    <div
+      class="_img_229001"
+    >
+      <img
+        alt=""
+        src=""
+      />
+    </div>
+    <div
+      class="_info_229001"
+    >
+      <p
+        class="_price_229001"
+      >
+        $
+        1
+      </p>
+      <p
+        class="_title_229001"
+      />
+      <p
+        class="_category_229001"
+      />
+      <button
+        class="_button_229001"
+      >
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+`;

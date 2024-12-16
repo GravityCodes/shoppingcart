@@ -13,3 +13,9 @@
   left:-5px;
 
 }
+
+@media  (min-width:  426px)  {
+  .product-amount-display  {
+    font-size: 0.6rem;
+  }
+}

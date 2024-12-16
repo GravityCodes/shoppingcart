@@ -1,9 +1,6 @@
 import styles from "./HomePage.module.css"
 import heroImg from "../../assets/imgs/hero-background.jpg"
 import { Link } from "react-router-dom"
-import { useCategories } from "../categories/useCategories"
-import { CategoryButton } from "../categories/CategoryButton"
-import { FeatureProducts } from "../featureProducts/FeatureProducts"
 import {Header} from "../header/Header"
 import { useCartProducts } from "../../hooks/useCartProducts"
 

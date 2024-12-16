@@ -1,0 +1,115 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HomePage component > matches snapshot 1`] = `
+<div>
+  <div
+    class="_header_69e643"
+  >
+    <button>
+       
+      <svg
+        class="lucide lucide-menu _menu_26077f"
+        fill="none"
+        height="22"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="22"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="4"
+          x2="20"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="4"
+          x2="20"
+          y1="6"
+          y2="6"
+        />
+        <line
+          x1="4"
+          x2="20"
+          y1="18"
+          y2="18"
+        />
+      </svg>
+       
+    </button>
+    <h1
+      role="heading"
+    >
+      <a
+        data-discover="true"
+        href="/"
+      >
+        Fordly
+      </a>
+    </h1>
+    <a
+      data-discover="true"
+      href="/Checkout"
+    >
+      <div
+        class="_cart_6d819b"
+      >
+        <svg
+          class="lucide lucide-shopping-cart"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="8"
+            cy="21"
+            r="1"
+          />
+          <circle
+            cx="19"
+            cy="21"
+            r="1"
+          />
+          <path
+            d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+          />
+        </svg>
+      </div>
+    </a>
+  </div>
+  <div
+    class="_hero_d8ed07"
+  >
+    <img
+      alt=""
+      class="_img_d8ed07"
+      src="/src/assets/imgs/hero-background.jpg"
+    />
+    <p
+      class="_hero-children_d8ed07"
+    >
+      Reasonable products for Reasonable prices
+    </p>
+    <div
+      class="_hero-children-link-wrapper_d8ed07"
+    >
+      <a
+        class="_link-btn_d8ed07"
+        data-discover="true"
+        href="/shop"
+      >
+         Start Shopping
+      </a>
+    </div>
+  </div>
+</div>
+`;
