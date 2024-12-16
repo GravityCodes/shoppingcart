@@ -2,9 +2,9 @@
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
-  grid-template-rows: repeat(auto-fill, 350px);
+  grid-auto-rows: max(500px);
   gap: 20px;
-  min-height: 90vh;
+  
 }
 
 .breadcrum {
