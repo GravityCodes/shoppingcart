@@ -12,6 +12,9 @@
   animation: slide-in .2s ease-in;
 }
 
+button {
+  padding: 0;
+}
 
 .exit {
   animation: slide-out .1s ease-out, fade-out .1s ease-out;
