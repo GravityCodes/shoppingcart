@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
 export const Header = (props) => {
-  
+
 
   return (
     <div className={styles.header}>

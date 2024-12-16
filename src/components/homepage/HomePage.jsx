@@ -9,35 +9,22 @@ import { useCartProducts } from "../../hooks/useCartProducts"
 
 export const HomePage = () => {
 
-  const {categories, error, loading} = useCategories();
-  const { updateCartProducts, amountOfProducts} = useCartProducts();
+
+  const { amountOfProducts} = useCartProducts();
 
   return (
     <>
       <Header numOfProducts={amountOfProducts} />
     
       <div className={styles.hero}>
-        <img src={heroImg} alt="" />
+        <img src={heroImg} alt="" className={styles.img}/>
         <p className={styles["hero-children"]}>Reasonable products for Reasonable prices</p>
         <div className={styles["hero-children-link-wrapper"]}>
         <Link className={styles["link-btn"]} to={"/shop"}> Start Shopping</Link>
         </div>
       </div>
 
-      <div className={styles["categories-button-grid"]}>
-        {
-          loading ? <>
-          <div className={styles["category-loading"]}></div>
-          <div className={styles["category-loading"]}></div>
-          <div className={styles["category-loading"]}></div>
-          <div className={styles["category-loading"]}></div>
-          </> 
-          : error ? <p> A network Error has been encountered</p>
-          : categories.map(category => <CategoryButton key={category} name={category} />)
-        }
-      </div>
       
-      <FeatureProducts updateCartProducts={updateCartProducts} />
     
     </>
   )

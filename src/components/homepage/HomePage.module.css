@@ -5,21 +5,27 @@ h1 {
 
 .hero {
   position: relative;
+  height: calc(100vh - 50px);
+}
+
+.img {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .hero-children {
   position: absolute;
-  top: 50px;
+  top: 40%;
   color: white;
   width: 100%;
   text-align: center;
-  font-size: .9rem;
+  font-size: 1.5rem;
 }
 
 .hero-children-link-wrapper {
   position: absolute;
-  top: 80px;
+  top: 50%;
   width: 100%;
   text-align: center;
 }
@@ -71,5 +77,18 @@ h1 {
 @keyframes pulse {
   to {
     opacity: 0.3;
+  }
+}
+
+@media (min-width: 426px) {
+  .hero-children {
+    font-size: 1.2rem;
+  }
+  
+}
+
+@media (min-width: 849px) {
+  .hero-children {
+    font-size: 1.5rem;
   }
 }

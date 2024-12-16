@@ -18,6 +18,10 @@
   animation-fill-mode: forwards;
 }
 
+.menu, .exit-btn {
+  cursor: pointer;
+}
+
 @keyframes slide-out {
   from {
     transform: translateX(0);
@@ -97,3 +101,4 @@ li {
     opacity: 0;
   }
 }
+

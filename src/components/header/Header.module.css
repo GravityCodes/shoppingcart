@@ -9,3 +9,10 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.title-and-cart {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
