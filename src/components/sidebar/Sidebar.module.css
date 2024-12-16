@@ -16,6 +16,10 @@ button {
   padding: 0;
 }
 
+.close-button {
+
+}
+
 .exit {
   animation: slide-out .1s ease-out, fade-out .1s ease-out;
   animation-fill-mode: forwards;
@@ -54,6 +58,7 @@ button {
   top: 0px;
   height: 30px;
   right: -32px;
+  padding: 6px;
 }
 
 ul {
